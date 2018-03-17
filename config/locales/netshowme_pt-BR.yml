@@ -1,0 +1,23 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+      role: Regra
+      streaming: Transmissão
+
+    attributes:
+      streaming:
+        title: Título
+        description: Descrição
+        date: Data
+        image: Imagem
+        url: Link da Transmissão
+        status: Status
+
+      user:
+        name: Nome
+        email: Email
+        password: Senha
+
+      role:
+        name: Nome
