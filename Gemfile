@@ -13,6 +13,9 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 
+#authorization
+gem 'cancancan', '~> 2.0'
+
 #frontend
 gem 'simple_form'
 gem 'slim'
