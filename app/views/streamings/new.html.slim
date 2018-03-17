@@ -1,0 +1,8 @@
+= simple_form_for @streaming do |f|
+  .message= flash.now[:error]
+  = f.input :title
+  = f.input :description
+  = f.input :image
+  = f.input :date, as: :string
+  = f.input :url
+  = f.submit 'Salvar'
