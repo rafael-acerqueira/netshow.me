@@ -24,6 +24,7 @@ feature 'Admin creates streaming' do
     expect(page).to have_content streaming.date
     expect(page).to have_content streaming.user.name
     expect(page).to have_content streaming.status
+    expect(page).to have_xpath("//img[contains(@src,'/uploads/streamings/image/')]")
   end
 
   scenario 'With invalid data' do
