@@ -2,6 +2,8 @@ class Streaming < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  enum status: [:confirmed, :done, :started]
+
   belongs_to :user
 
   validates :title, :description, :image, :url, :date, presence: true

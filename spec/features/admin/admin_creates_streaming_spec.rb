@@ -7,7 +7,7 @@ feature 'Admin creates streaming' do
 
   scenario 'successfully' do
 
-    streaming = build(:streaming, user: @user)
+    streaming = build(:streaming, user: @user, status: :confirmed)
 
     visit new_streaming_path
 
@@ -18,12 +18,12 @@ feature 'Admin creates streaming' do
     attach_file("Imagem", Rails.root + "spec/fixtures/image.png")
 
     click_on 'Salvar'
-
+    human_status = Streaming.human_attribute_name(streaming.status.to_sym)
     expect(page).to have_content streaming.title
     expect(page).to have_content streaming.description
     expect(page).to have_content streaming.date
     expect(page).to have_content streaming.user.name
-    expect(page).to have_content streaming.status
+    expect(page).to have_content human_status
     expect(page).to have_xpath("//img[contains(@src,'/uploads/streamings/image/')]")
   end
 

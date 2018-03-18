@@ -1,11 +1,12 @@
+include ActionDispatch::TestProcess
 FactoryBot.define do
   factory :streaming do
     title FFaker::Book.title
     description FFaker::Lorem.phrases
     date Date.today
-    image "https://robohash.org/aututquod.png?size=300x300"
+    image { fixture_file_upload(Rails.root + "spec/fixtures/image.png", "image/png") }
     url "https://content.jwplatform.com/manifests/yp34SRmf.m3u8"
-    status 0
+    status Streaming.statuses[:done]
     user
   end
 end

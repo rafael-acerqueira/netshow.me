@@ -13,6 +13,9 @@ pt-BR:
         image: Imagem
         url: Link da Transmissão
         status: Status
+        confirmed: Confirmado
+        done: Finalizado
+        started: Iniciado
 
       user:
         name: Nome

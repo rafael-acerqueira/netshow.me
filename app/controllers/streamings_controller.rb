@@ -17,7 +17,7 @@ class StreamingsController < ApplicationController
   end
 
   def show
-
+    @streaming = StreamingPresenter.new(@streaming)
   end
 
 
