@@ -20,6 +20,9 @@ class StreamingsController < ApplicationController
     @streaming = StreamingPresenter.new(@streaming)
   end
 
+  def index
+    @streamings = Streaming.all
+  end
 
   private
 

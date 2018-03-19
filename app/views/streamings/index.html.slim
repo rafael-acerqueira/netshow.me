@@ -1,0 +1,12 @@
+- if @streamings.present?
+  - @streamings.each do |streaming|
+    .streaming-item
+      = link_to streaming_path(streaming)
+        .streaming-image= image_tag streaming.image_url
+        .streaming-info
+          h2= streaming.title
+          h3=streaming.user.name
+          p= l streaming.date
+
+- else
+  span Ainda não há transmissões cadastradas
