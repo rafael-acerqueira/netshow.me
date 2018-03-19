@@ -21,7 +21,10 @@ class StreamingsController < ApplicationController
   end
 
   def index
-    @streamings = Streaming.all
+    @q = Streaming.ransack(params[:q])
+    @streamings = @q.result
+    @users = User.all
+    @status = statuses
   end
 
   private
@@ -32,5 +35,11 @@ class StreamingsController < ApplicationController
 
   def streaming_params
     params.require(:streaming).permit(:title, :description, :image, :date, :url)
+  end
+
+  def statuses    
+    Streaming.statuses.map do |key, value|
+      [Streaming.human_attribute_name(key.to_sym), value]
+    end
   end
 end

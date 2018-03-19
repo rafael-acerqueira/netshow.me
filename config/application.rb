@@ -1,5 +1,5 @@
 require_relative 'boot'
-
+ENV['RANSACK_FORM_BUILDER'] = '::SimpleForm::FormBuilder'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -12,6 +12,6 @@ module Netshowme
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :'pt-BR'
-    config.time_zone = 'Brasilia'    
+    config.time_zone = 'Brasilia'
   end
 end

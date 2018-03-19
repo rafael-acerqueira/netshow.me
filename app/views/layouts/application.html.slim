@@ -7,17 +7,17 @@ html
     link href= '/favicon.png' rel='icon'
     title Netshowme
 
-    = stylesheet_link_tag "frontend/application", media: "all"
-    = javascript_include_tag "frontend/application"
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
 
     = csrf_meta_tags
 
   body
     header
       p.notice= notice
-      p.alert= alert    
+      p.alert= alert
 
-    section#main
+    main
       = yield
 
     footer
