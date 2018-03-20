@@ -1,7 +1,9 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-    can :manage, :all if user.role == "admin"
+  def initialize(user)    
+    if user.role.name == "admin"
+      can :manage, :all
+    end
   end
 end

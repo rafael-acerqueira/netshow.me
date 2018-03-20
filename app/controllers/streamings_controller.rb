@@ -1,5 +1,5 @@
 class StreamingsController < ApplicationController
-
+  load_and_authorize_resource
   before_action :streaming, only: :show
 
   def new
@@ -30,6 +30,7 @@ class StreamingsController < ApplicationController
   private
 
   def streaming
+    
     @streaming = Streaming.find_by_slug(params[:id])
   end
 
@@ -37,7 +38,7 @@ class StreamingsController < ApplicationController
     params.require(:streaming).permit(:title, :description, :image, :date, :url)
   end
 
-  def statuses    
+  def statuses
     Streaming.statuses.map do |key, value|
       [Streaming.human_attribute_name(key.to_sym), value]
     end
