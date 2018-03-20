@@ -1,31 +1,20 @@
-- if @streamings.present?
-  = search_form_for @q, url: streamings_url, html: { class: 'search-form' }, method: :get do |f|
+= search_form_for @q, url: streamings_url, html: { class: 'search-form' }, method: :get do |f|
 
-    = f.input_field :title_cont, required: false, placeholder: 'Buscar...', class: 'search-query-field'
+  = f.input_field :title_cont, required: false, placeholder: 'Buscar...', class: 'search-query-field'
 
-    = f.input_field :status_eq, required: false, collection: @status, include_blank: 'Filtrar por Status', class: 'filter'
+  = f.input_field :status_eq, required: false, collection: @status, include_blank: 'Filtrar por Status', class: 'filter'
 
-    = f.input_field :user_id_eq, required: false, collection: @users, include_blank: 'Filtrar por Usuário', class: 'filter'
+  = f.input_field :user_id_eq, required: false, collection: @users, include_blank: 'Filtrar por Usuário', class: 'filter'
 
-    = f.input :daterange , label: false, input_html: {value: "#{@q.date_gteq.to_s} - #{@q.date_lteq.to_s}"}
+  = f.input :daterange , label: false, input_html: {value: "#{@q.date_gteq.to_s} - #{@q.date_lteq.to_s}"}
 
-    = f.input :date_gteq, as: :hidden
+  = f.input :date_gteq, as: :hidden
 
-    = f.input :date_lteq, as: :hidden
+  = f.input :date_lteq, as: :hidden
 
-    = f.button :button, class: 'search-submit' do
-      = fa_icon 'search'
-
-  - @streamings.each_with_index do |streaming, index|
-    div(class="streaming-item-#{index}")
-      = link_to streaming_path(streaming)
-        .streaming-image= image_tag streaming.image_url
-        .streaming-info
-          h2= streaming.title
-          h3=streaming.user.name
-          p= l streaming.date
-
-- else
-  span Ainda não há transmissões cadastradas
+  = f.button :button, class: 'search-submit' do
+    = fa_icon 'search'
+    
+= render '/shared/streaming_list'
 
 = link_to 'Adicionar Transmissão', new_streaming_url, class: 'btn btn-success'

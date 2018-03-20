@@ -72,7 +72,7 @@ feature 'User see list of streamings' do
 
     end
 
-    scenario 'With invalid data' do
+    scenario 'Without records' do
 
       visit streamings_path
 

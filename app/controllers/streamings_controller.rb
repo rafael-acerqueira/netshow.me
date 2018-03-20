@@ -23,6 +23,7 @@ class StreamingsController < ApplicationController
   def index
     @q = Streaming.ransack(params[:q])
     @streamings = @q.result
+    flash[:notice] = 'Ainda não há transmissões cadastradas' if !@streamings.present?
     @users = User.all
     @status = statuses
   end
@@ -30,7 +31,7 @@ class StreamingsController < ApplicationController
   private
 
   def streaming
-    
+
     @streaming = Streaming.find_by_slug(params[:id])
   end
 
