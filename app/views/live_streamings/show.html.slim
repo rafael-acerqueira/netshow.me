@@ -1,0 +1,16 @@
+p= @streaming.title
+p= @streaming.description
+p= @streaming.date
+p= @streaming.user.name
+p= image_tag @streaming.image_url
+p= @streaming.title
+
+
+video#my-player.video-js controls="" data-setup="{}" autoplay=""
+  source src="#{@streaming.url}" type="application/x-mpegURL">
+
+  p.vjs-no-js
+    | To view this video please enable JavaScript, and consider upgrading to a
+    | web browser that
+    a href="http://videojs.com/html5-video-support/" target="_blank"
+      | supports HTML5 video

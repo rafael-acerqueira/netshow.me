@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :streamings, only: [:new, :create, :show, :index]
 
+  get '/live-streamings/:slug', to: 'live_streamings#show', as: :live_streaming
+
   get '/live-streamings', to: 'live_streamings#index', as: :live_streamings
 
   get '/next-streamings', to: 'next_streamings#index', as: :next_streamings

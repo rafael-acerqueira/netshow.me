@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require moment
 //= require daterangepicker
+//= require video
+//= require videojs-contrib-hls
 //= require_tree .
