@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :streamings, only: [:new, :create, :show, :index]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/transmissoes-ao-vivo', to: 'live_streamings#index', as: :live_streamings 
 
   root to: 'home#index'
 end
