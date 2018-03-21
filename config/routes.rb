@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :streamings, only: [:new, :create, :show, :index]
 
-  get '/transmissoes-ao-vivo', to: 'live_streamings#index', as: :live_streamings 
+  get '/live-streamings', to: 'live_streamings#index', as: :live_streamings
+
+  get '/next-streamings', to: 'next_streamings#index', as: :next_streamings
 
   root to: 'home#index'
 end
