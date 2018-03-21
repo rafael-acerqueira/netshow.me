@@ -1,1 +1,11 @@
-= render '/shared/streaming_list'
+- if @streamings.present?
+  - @streamings.each_with_index do |streaming, index|
+    div(class="streaming-item-#{index}")
+      .streaming-image= image_tag streaming.image_url
+      .streaming-info
+        h2= streaming.title
+        h3=streaming.user.name
+        p= l streaming.date
+
+- else
+  span= flash[:notice]

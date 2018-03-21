@@ -23,7 +23,6 @@ feature 'User see list of next streamings' do
       expect(page).to have_content I18n.l new_streaming.date
       expect(page).to have_content new_streaming.user.name
       expect(page).to have_xpath("//img[contains(@src,'/uploads/streamings/image/')]")
-      expect(page).to have_selector(:css, 'a[href="'+streaming_path(new_streaming)+'"]')
     end
 
     expect(page).to_not have_selector(:css, '.streaming-item-1')

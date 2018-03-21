@@ -21,7 +21,7 @@ feature 'User see list of live streaming' do
       expect(page).to have_content I18n.l live_streaming.date
       expect(page).to have_content live_streaming.user.name
       expect(page).to have_xpath("//img[contains(@src,'/uploads/streamings/image/')]")
-      expect(page).to have_selector(:css, 'a[href="'+streaming_path(live_streaming)+'"]')
+      expect(page).to have_selector(:css, 'a[href="'+live_streaming_path(live_streaming)+'"]')
     end
 
     expect(page).to_not have_selector(:css, '.streaming-item-1')
