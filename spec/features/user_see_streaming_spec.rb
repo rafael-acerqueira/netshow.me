@@ -17,7 +17,44 @@ feature 'User see streaming' do
       expect(page).to have_content human_status
       expect(page).to have_content streaming.url
       expect(page).to have_xpath("//img[contains(@src,'/uploads/streamings/image/')]")
-      expect(page).to have_xpath("//a[contains(@class, 'start-stop')]")
+      expect(page).to have_xpath("//input[contains(@class, 'start-streaming')]")
+      expect(page).to have_xpath("//input[contains(@class, 'stop-streaming')]")
+    end
+
+    scenario 'and start streaming' do
+      user = login_admin
+      streaming = create(:streaming, user: user)
+
+      previous_status = streaming.status
+
+      visit streaming_path(streaming)
+
+      click_on I18n.t('start_streaming')
+
+      status_updated = streaming.reload.status
+
+      expect(page).to have_current_path(streaming_path(streaming))
+      expect(status_updated).to_not eq previous_status
+      expect(status_updated.to_sym).to equal :started
+
+    end
+
+    scenario 'and finish streaming' do
+      user = login_admin
+      streaming = create(:streaming, user: user)
+
+      previous_status = streaming.status
+
+      visit streaming_path(streaming)
+
+      click_on I18n.t('finish_streaming')
+
+      status_updated = streaming.reload.status
+
+      expect(page).to have_current_path(streaming_path(streaming))
+      expect(status_updated).to_not eq previous_status
+      expect(status_updated.to_sym).to equal :done
+
     end
   end
 

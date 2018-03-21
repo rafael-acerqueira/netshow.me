@@ -5,6 +5,11 @@ p= @streaming.date
 p= @streaming.status
 p= @streaming.user.name
 p= @streaming.url
-= link_to 'aaa', '#', class: 'start-stop'
 
-= link_to 'Ir para listagem', streamings_path
+= button_to t('start_streaming'), streaming_path(@streaming), method: :put,
+ class: 'start-streaming btn-success', name: 'start_streaming'
+
+= button_to t('finish_streaming'), streaming_path(@streaming), method: :put,
+ class: 'stop-streaming btn-danger', name: 'finish_streaming'
+
+= link_to t('go_to_streamings'), streamings_path

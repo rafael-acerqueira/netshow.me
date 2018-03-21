@@ -1,6 +1,6 @@
 class StreamingsController < ApplicationController
   load_and_authorize_resource
-  before_action :streaming, only: :show
+  before_action :streaming, only: [:show, :update]
 
   def new
     @streaming = Streaming.new
@@ -26,6 +26,16 @@ class StreamingsController < ApplicationController
     flash[:notice] = 'Ainda não há transmissões cadastradas' if !@streamings.present?
     @users = User.all
     @status = statuses
+  end
+
+  def update
+    if params[:start_streaming].present?
+      @streaming.update(status: 'started')
+    elsif params[:finish_streaming].present?
+      @streaming.update(status: 'done')
+    end
+
+    redirect_to @streaming
   end
 
   private
