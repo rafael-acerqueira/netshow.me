@@ -17,4 +17,6 @@
 //= require daterangepicker
 //= require video
 //= require videojs-contrib-hls
+//= require popper
+//= require bootstrap
 //= require_tree .
