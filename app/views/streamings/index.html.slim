@@ -15,17 +15,6 @@
   = f.button :button, class: 'search-submit' do
     = fa_icon 'search'
 
-- if @streamings.present?
-  - @streamings.each_with_index do |streaming, index|
-    div(class="streaming-item-#{index}")
-      = link_to streaming_path(streaming)
-        .streaming-image= image_tag streaming.image_url
-        .streaming-info
-          h2= streaming.title
-          h3=streaming.user.name
-          p= l streaming.date
-
-- else
-  span= flash[:notice]
+= render 'shared/streamings_linked_list'
 
 = link_to 'Adicionar Transmissão', new_streaming_url, class: 'btn btn-success'
