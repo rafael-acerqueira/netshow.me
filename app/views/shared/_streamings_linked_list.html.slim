@@ -1,11 +1,12 @@
-- if @streamings.present?
-  - @streamings.each_with_index do |streaming, index|
-    div(class="streaming-item-#{index}")
-      - if controller_name == "next_streamings"
-        = render partial: 'shared/streaming', locals: { streaming: streaming }
-      - else
-        = link_to polymorphic_streaming_link(streaming)
+.streaming-list.col-sm-12
+  - if @streamings.present?
+    - @streamings.each_with_index do |streaming, index|
+      div(class="streaming-item streaming-item-#{index} card")
+        - if controller_name == "next_streamings"
           = render partial: 'shared/streaming', locals: { streaming: streaming }
+        - else
+          = link_to polymorphic_streaming_link(streaming), class: 'streaming-link'
+            = render partial: 'shared/streaming', locals: { streaming: streaming }
 
-- else
-  span= flash[:notice]
+  - else
+    span= flash[:notice]

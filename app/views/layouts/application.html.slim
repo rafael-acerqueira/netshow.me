@@ -3,7 +3,7 @@ html
   head
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
-    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"    
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     title Netshowme
 
     = stylesheet_link_tag "application", media: "all"
@@ -13,10 +13,12 @@ html
 
   body
     header
-      p.notice= notice
-      p.alert= alert
+      .container
+        p.notice= notice
+        p.alert= alert
 
     main
-      = yield
+      .container
+        = yield
 
     footer
