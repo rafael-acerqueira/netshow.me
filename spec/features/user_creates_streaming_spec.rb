@@ -23,7 +23,7 @@ feature 'User creates streaming' do
       human_status = Streaming.human_attribute_name(streaming.status.to_sym)
       expect(page).to have_content streaming.title
       expect(page).to have_content streaming.description
-      expect(page).to have_content streaming.date
+      expect(page).to have_content I18n.l streaming.date
       expect(page).to have_content streaming.user.name
       expect(page).to have_content human_status
       expect(page).to have_xpath("//img[contains(@src,'/uploads/streamings/image/')]")
