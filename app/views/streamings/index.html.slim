@@ -1,4 +1,4 @@
-h1.title= t('streaming_list') 
+h1.title= t('streaming_list')
 = search_form_for @q, url: streamings_url, html: { class: 'search-form' }, method: :get do |f|
 
   = f.input_field :title_cont, required: false, placeholder: 'Buscar...', class: 'search-query-field'

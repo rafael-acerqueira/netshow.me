@@ -1,4 +1,4 @@
-h1.title= t('new_streaming') 
+h1.title= t('new_streaming')
 = simple_form_for @streaming do |f|
   .message= flash.now[:error]
   = f.input :title
@@ -6,4 +6,6 @@ h1.title= t('new_streaming')
   = f.input :image
   = f.input :date, as: :string
   = f.input :url
-  = f.submit 'Salvar'
+  = f.submit 'Salvar', class: 'btn btn-primary action-button'
+
+= link_to 'Voltar', streamings_path, class: 'btn btn-danger action-button'  

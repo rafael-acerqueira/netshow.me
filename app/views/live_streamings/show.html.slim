@@ -14,3 +14,7 @@ video#my-player.video-js controls="" data-setup="{}" autoplay=""
       | supports HTML5 video
 
 #events
+
+coffee:
+  $(document).on 'turbolinks:load', ->
+    player = videojs('my-player')
