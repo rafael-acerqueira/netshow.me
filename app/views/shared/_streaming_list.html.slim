@@ -1,8 +1,9 @@
-.streaming-list.col-sm-12  
+.streaming-list.col-sm-12
   - @streamings.each_with_index do |streaming, index|
-    div(class="streaming-item streaming-item-#{index} card")
-      - if controller_name == "next_streamings" || (controller_name == "home" && current_user.role.name == "user" && !streaming.started?)
-        = render partial: 'shared/streaming', locals: { streaming: streaming }
-      - else
-        = link_to polymorphic_streaming_link(streaming), class: 'streaming-link'
+    .col-sm-3
+      div(class="streaming-item streaming-item-#{index} card")
+        - if controller_name == "next_streamings" || (controller_name == "home" && current_user.role.name == "user" && !streaming.started?)
           = render partial: 'shared/streaming', locals: { streaming: streaming }
+        - else
+          = link_to polymorphic_streaming_link(streaming), class: 'streaming-link'
+            = render partial: 'shared/streaming', locals: { streaming: streaming }

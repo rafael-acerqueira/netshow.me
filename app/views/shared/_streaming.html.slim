@@ -1,5 +1,5 @@
-.streaming-image= image_tag streaming.image_url, class: 'img-responsive card-img-top'
+.streaming-image= image_tag streaming.image_url(:card), class: 'img-responsive card-img-top'
 .streaming-info.card-body
   h2.streaming-title= streaming.title
   h3.streaming-author=streaming.user.name
-  p.streaming-date= l streaming.date
+  p.streaming-date= l streaming.date, format: :default

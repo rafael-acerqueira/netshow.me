@@ -3,14 +3,14 @@
     .container
       .menu-wrapper.col-sm-8
         = link_to 'Netshow.me', root_path, class: 'navbar-brand'
-        = link_to t('live_streaming_list'), live_streamings_path, class: 'nav-link'
         - if can? :index, Streaming
           = link_to t('streaming_list'), streamings_path, class: 'nav-link'
+        = link_to t('live_streaming_list'), live_streamings_path, class: 'nav-link'
         = link_to t('next_streaming_list'), next_streamings_path, class: 'nav-link'
 
       .user-info-box.col-sm-4
         span.current-user-name Olá, #{current_user.name}
-        - if user_signed_in?          
+        - if user_signed_in?
           = link_to t('logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
 
 

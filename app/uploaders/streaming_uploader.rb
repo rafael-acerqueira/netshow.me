@@ -7,9 +7,13 @@ class StreamingUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [200, 140]
   end
 
+  version :card do
+    process :resize_to_fill => [246, 163]
+  end
+
   def extension_white_list
     %w(jpg jpeg gif png)
-  end  
+  end
 
   def store_dir
     "uploads/#{model.class.to_s.underscore.pluralize}/#{mounted_as}"
