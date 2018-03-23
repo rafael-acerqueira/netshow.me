@@ -1,16 +1,20 @@
-h1.title= @streaming.title
+.col-sm-12
+  h1.title= @streaming.title
 
-p= @streaming.description
-p= image_tag @streaming.image_url
-p= @streaming.date
-p= @streaming.status
-p= @streaming.user.name
-p= @streaming.url
+  .streaming-item-box.col-sm-12
+    .streaming-description= @streaming.description
+    .streaming-image.col-sm-3= image_tag @streaming.image_url(:card)
+    .streaming-fields.col-sm-9
+      p #{t('streaming_date')}: #{l @streaming.date}
+      p #{t('streaming_status')}: #{@streaming.status}
+      p #{t('streaming_user_name')}: #{@streaming.user.name}
+      p #{t('streaming_url')}: #{@streaming.url}
 
-= button_to t('start_streaming'), streaming_path(@streaming), method: :put,
- class: 'start-streaming btn  btn-success action-button', name: 'start_streaming'
+  .action-buttons-box.col-sm-12
+    = button_to t('start_streaming'), streaming_path(@streaming), method: :put,
+     class: 'start-streaming btn  btn-success action-button', name: 'start_streaming'
 
-= button_to t('finish_streaming'), streaming_path(@streaming), method: :put,
- class: 'stop-streaming btn   btn-danger action-button', name: 'finish_streaming'
+    = button_to t('finish_streaming'), streaming_path(@streaming), method: :put,
+     class: 'stop-streaming btn   btn-danger action-button', name: 'finish_streaming'
 
-= link_to t('go_to_streamings'), streamings_path, class: 'btn btn-primary action-button'
+    = link_to t('go_to_streamings'), streamings_path, class: 'btn btn-primary action-button'

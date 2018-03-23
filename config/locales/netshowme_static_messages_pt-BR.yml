@@ -7,3 +7,7 @@ pt-BR:
   live_streaming_list: Transmissões Ao Vivo
   new_streaming: Nova Transmissão
   logout: Sair
+  streaming_date: Data da Transmissão
+  streaming_status: Status da Transmissão
+  streaming_user_name: Criador da Transmissão
+  streaming_url: URL da Transmissão
