@@ -33,6 +33,7 @@ class StreamingsController < ApplicationController
       @streaming.update(status: 'started')
     elsif params[:finish_streaming].present?
       @streaming.update(status: 'done')
+      NotificationBroadcastJob.perform_later @streaming
     end
 
     redirect_to @streaming

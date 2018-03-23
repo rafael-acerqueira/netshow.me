@@ -7,10 +7,12 @@ p= @streaming.title
 
 
 video#my-player.video-js controls="" data-setup="{}" autoplay=""
-  source src="#{@streaming.url}" type="application/x-mpegURL">
+  source src="#{@streaming.url}" type="application/x-mpegURL" id="my-player-source">
 
   p.vjs-no-js
     | To view this video please enable JavaScript, and consider upgrading to a
     | web browser that
     a href="http://videojs.com/html5-video-support/" target="_blank"
       | supports HTML5 video
+
+#events

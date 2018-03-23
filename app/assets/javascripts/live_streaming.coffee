@@ -1,1 +1,2 @@
-player = videojs('my-player')
+$(document).on 'turbolinks:load', ->
+  player = videojs('my-player')

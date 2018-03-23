@@ -6,8 +6,8 @@ html
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     title Netshowme
 
-    = stylesheet_link_tag "application", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
 
     = csrf_meta_tags
 
