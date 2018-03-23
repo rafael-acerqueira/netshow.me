@@ -1,0 +1,43 @@
+$primary-color: #177bbb
+$secondary-color: #f2f4f8
+$hover-color: #ccc
+
+body
+  background-color: $secondary-color
+
+footer
+  background-color: $primary-color
+  height: 50px
+
+main
+  height: 100vh
+
+.navbar
+  :background-color $primary-color
+
+.nav-link, .navbar-brand
+  :color $secondary-color
+  :text-decoration none
+
+.nav-link
+  &:hover
+    :color $hover-color
+
+.navbar-brand
+  :font-weight bold
+
+  &:hover
+    :color $secondary-color
+
+.menu-wrapper
+  :display flex
+  :align-items center
+
+.current-user-name
+  :text-decoration none
+  :color $secondary-color
+
+.user-info-box
+  :display flex
+  :align-items center
+  :justify-content flex-end
