@@ -9,7 +9,7 @@
       a href="http://videojs.com/html5-video-support/" target="_blank"
         | supports HTML5 video
   .live-streaming-box-information
-    .live-streaming-image.col-sm-3= image_tag @streaming.image_url(:card)
+    .live-streaming-image.col-sm-3= image_tag @streaming.image_url(:card), class: 'img-fluid'
     .live-streaming-info.col-sm-9
       h2.live-streaming-title= @streaming.user.name
       span= l @streaming.date

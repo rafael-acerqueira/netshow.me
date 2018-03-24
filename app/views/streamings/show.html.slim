@@ -3,7 +3,7 @@
 
   .streaming-item-box.col-sm-12
     .streaming-description= @streaming.description
-    .streaming-image.col-sm-3= image_tag @streaming.image_url(:card)
+    .streaming-image.col-sm-3= image_tag @streaming.image_url(:card), class: 'img-fluid'
     .streaming-fields.col-sm-9
       p #{t('streaming_date')}: #{l @streaming.date}
       p #{t('streaming_status')}: #{@streaming.status}
