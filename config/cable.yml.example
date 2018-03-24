@@ -1,9 +1,0 @@
-development:
-  adapter: async
-
-test:
-  adapter: async
-
-production:
-  adapter: redis
-  url: redis://redistogo:your_redis_to_go_url@hoki.redistogo.com:9247/
