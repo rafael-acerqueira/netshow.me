@@ -1,24 +1,29 @@
-# README
+![ruby](https://img.shields.io/badge/Ruby-2.5.0-red.svg)
+![rails](https://img.shields.io/badge/Rails-5.0.6-red.svg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Streaming Manager
 
-Things you may want to cover:
+----
+## About this project
+This project is a development challenge that is part of a selective proccess at [Netshow.me](https://netshow.me/).
 
-* Ruby version
 
-* System dependencies
+----
+## How it works?
+This app manages streamings and allow the user see future streamings and watch only live streamings. When the admin user finish the streaming, the user is notified
 
-* Configuration
+----
+## Initial Setup
+Run the follow commands:
+`rails db:create`
+`rails db:migrate`
+`rails db:seed`
 
-* Database creation
+----
+## Access
+Accessing the system use one of users that you have in the `db/seeds.rb`
 
-* Database initialization
+----
+## Tests
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run test execute `rspec`
