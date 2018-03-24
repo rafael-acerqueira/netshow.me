@@ -7,3 +7,5 @@
         - else
           = link_to polymorphic_streaming_link(streaming), class: 'streaming-link'
             = render partial: 'shared/streaming', locals: { streaming: streaming }
+
+  .col-sm-12= paginate @streamings

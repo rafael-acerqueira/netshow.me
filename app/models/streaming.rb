@@ -2,6 +2,8 @@ class Streaming < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
 
+  paginates_per 16
+
   enum status: [:confirmed, :done, :started]
 
   belongs_to :user

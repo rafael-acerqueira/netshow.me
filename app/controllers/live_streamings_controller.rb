@@ -3,6 +3,7 @@ class LiveStreamingsController < ApplicationController
   before_action :started_streaming, only: [:index, :show]
 
   def index
+    @streamings = @streamings.page params[:page]
     flash[:notice] = 'Ainda não há transmissões ao vivo' if !@streamings.present?
   end
 

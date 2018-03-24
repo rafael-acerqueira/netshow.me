@@ -16,7 +16,5 @@
 
     = f.button :button, class: 'search-submit' do
       = fa_icon 'search'
-
+  .col-sm-12= link_to 'Adicionar Transmissão', new_streaming_url, class: 'btn add-streaming'
 = render 'shared/streaming_list'
-
-.col-sm-12= link_to 'Adicionar Transmissão', new_streaming_url, class: 'btn btn-success'

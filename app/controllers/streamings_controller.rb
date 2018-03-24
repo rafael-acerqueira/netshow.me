@@ -22,7 +22,7 @@ class StreamingsController < ApplicationController
 
   def index
     @q = Streaming.ransack(params[:q])
-    @streamings = @q.result
+    @streamings = @q.result.page params[:page]
     flash[:notice] = 'Ainda não há transmissões cadastradas' if !@streamings.present?
     @users = User.all
     @status = statuses
