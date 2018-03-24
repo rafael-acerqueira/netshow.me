@@ -14,7 +14,7 @@ feature 'User see live streaming' do
 
     expect(page).to have_content streaming.title
     expect(page).to have_content streaming.description
-    expect(page).to have_content streaming.date
+    expect(page).to have_content I18n.l streaming.date
     expect(page).to have_content streaming.user.name
     expect(page).to have_xpath ("//source[contains(@src, '#{streaming.url}')]")
     expect(page).to have_xpath("//img[contains(@src,'/uploads/streamings/image/')]")
