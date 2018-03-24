@@ -21,3 +21,6 @@ database.yml
 
 #upload files
 public/uploads/
+
+#REDIS Path
+config/cable.yml
