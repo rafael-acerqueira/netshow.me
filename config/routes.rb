@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :streamings, only: [:new, :create, :show, :index, :update]
+  resources :streamings, only: [:new, :create, :show, :index, :update], param: :slug
 
   get '/live-streamings/:slug', to: 'live_streamings#show', as: :live_streaming
 

@@ -45,7 +45,7 @@ class StreamingsController < ApplicationController
 
   def streaming
 
-    @streaming = Streaming.find_by_slug(params[:id])
+    @streaming = Streaming.find_by_slug(params[:slug])
   end
 
   def streaming_params
