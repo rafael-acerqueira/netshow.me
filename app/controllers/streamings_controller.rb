@@ -31,8 +31,10 @@ class StreamingsController < ApplicationController
   def update
     if params[:start_streaming].present?
       @streaming.update(status: 'started')
+      flash[:notice] = 'Transmissão Iniciada'
     elsif params[:finish_streaming].present?
       @streaming.update(status: 'done')
+      flash[:alert] = 'Transmissão Finalizada'
       NotificationBroadcastJob.perform_later @streaming
     end
 

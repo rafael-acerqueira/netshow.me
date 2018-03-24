@@ -37,6 +37,8 @@ feature 'User see streaming' do
       expect(status_updated).to_not eq previous_status
       expect(status_updated.to_sym).to equal :started
 
+      expect(page).to have_content 'Transmissão Iniciada'
+
     end
 
     scenario 'and finish streaming' do
@@ -54,6 +56,8 @@ feature 'User see streaming' do
       expect(page).to have_current_path(streaming_path(streaming))
       expect(status_updated).to_not eq previous_status
       expect(status_updated.to_sym).to equal :done
+
+      expect(page).to have_content 'Transmissão Finalizada'
 
     end
   end
