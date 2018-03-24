@@ -1,2 +1,9 @@
-.notification-content
-  p A transmissão #{streaming.title} será encerrada em instantes
+#notification-modal.modal.fade
+  .modal-dialog.modal-dialog-centered
+    .modal-content
+      .modal-header
+        h4.modal-title Finalizando Transmissão
+        button.close data-dismiss="modal" type="button"  &times;
+      .modal-body Essa transmissão será finalizada em instantes
+      .modal-footer
+        button.btn.btn-secondary data-dismiss="modal" type="button"  Fechar

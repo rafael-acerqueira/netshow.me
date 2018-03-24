@@ -1,4 +1,4 @@
-.col-sm-12
+.live-streaming-box.pull-left.col-sm-12
   h1.title= @streaming.title
   video#my-player.video-js controls="" data-setup="{}" autoplay=""
     source src="#{@streaming.url}" type="application/x-mpegURL" id="my-player-source">
@@ -8,17 +8,14 @@
       | web browser that
       a href="http://videojs.com/html5-video-support/" target="_blank"
         | supports HTML5 video
-
-  .live-streaming-image.col-sm-3= image_tag @streaming.image_url(:card)
-  .live-streaming-info.col-sm-9
-    h2.live-streaming-title= @streaming.user.name
-    span= l @streaming.date
-  .live-streaming-description.col-sm-12
-    h3= t('description')
-    = @streaming.description
-
-
-#events
+  .live-streaming-box-information
+    .live-streaming-image.col-sm-3= image_tag @streaming.image_url(:card)
+    .live-streaming-info.col-sm-9
+      h2.live-streaming-title= @streaming.user.name
+      span= l @streaming.date
+    .live-streaming-description.col-sm-12
+      h3= t('description')
+      = @streaming.description
 
 coffee:
   $(document).on 'turbolinks:load', ->

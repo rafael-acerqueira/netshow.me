@@ -9,5 +9,6 @@ $(document).on 'turbolinks:load', ->
       # Called when the subscription has been terminated by the server
 
     received: (data) ->
-      $('#events').prepend data.message
+      $('.live-streaming-box').prepend data.message
+      $('#notification-modal').modal('show')
       setTimeout(window.change_src, 5000)
